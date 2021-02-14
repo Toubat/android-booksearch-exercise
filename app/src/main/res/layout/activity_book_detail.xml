@@ -1,4 +1,5 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,24 +8,40 @@
 
     <ImageView
         android:id="@+id/ivBookCover"
-        android:layout_marginTop="8dp"
-        android:layout_width="280dp"
-        android:layout_height="280dp" />
+        android:layout_width="231dp"
+        android:layout_height="213dp"
+        android:layout_below="@+id/toolbar_detail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/ivBookCover"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp"
+        android:textSize="36sp"
+        tools:text="Book Title" />
 
     <TextView
         android:id="@+id/tvAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:layout_marginTop="8dp" />
+        android:layout_below="@+id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp"
+        tools:text="author" />
 
-</LinearLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="#FFFFFF"></androidx.appcompat.widget.Toolbar>
+
+</RelativeLayout>

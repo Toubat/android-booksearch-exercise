@@ -5,30 +5,15 @@ import android.text.TextUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 
+@Parcel
 public class Book {
-    private String openLibraryId;
-    private String author;
-    private String title;
-
-    public String getOpenLibraryId() {
-        return openLibraryId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    // Get book cover from covers API
-    public String getCoverUrl() {
-        return "https://covers.openlibrary.org/b/olid/" + openLibraryId + "-L.jpg?default=false";
-    }
+    public String openLibraryId;
+    public String author;
+    public String title;
 
     // Returns a Book given the expected JSON
     public static Book fromJson(JSONObject jsonObject) {
@@ -86,5 +71,22 @@ public class Book {
             }
         }
         return books;
+    }
+
+    public String getOpenLibraryId() {
+        return openLibraryId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    // Get book cover from covers API
+    public String getCoverUrl() {
+        return "https://covers.openlibrary.org/b/olid/" + openLibraryId + "-L.jpg?default=false";
     }
 }
